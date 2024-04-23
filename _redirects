@@ -1,0 +1,3 @@
+/changeset/:commit https://github.com/Warzone2100/warzone2100/commit/:commit 302
+/ticket/:ticketid https://github.com/Warzone2100/old-trac-import/issues/:ticketid 302
+/wiki/* / 302
