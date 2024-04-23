@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" data-bs-core="modern" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Warzone 2100 - Developer Resources</title>
+
+    <!-- Halfmoon CSS -->
+    <link href="assets/css/halfmoon.min.css" rel="stylesheet">
+    <!-- Halfmoon modern core theme -->
+    <link href="assets/css/cores/halfmoon.modern.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+    <style>
+      #sidebar .offcanvas-header {
+        height: 63px;
+        border-bottom: var(--bs-border-width) solid var(--bs-content-border-color)!important;
+      }
+
+      .docs-navbar {
+        min-height: 63px;
+        background-color: var(--bs-content-bg);
+        border-bottom: var(--bs-border-width) solid var(--bs-content-border-color);
+      }
+
+      @media (min-width: 992px) {
+          [data-bs-theme=dark] .docs-navbar {
+              background-color: var(--bs-secondary-bg);
+          }
+      }
+      
+      .navbar-side {
+        flex-grow: 1;
+        align-items: center;
+        display: flex!important;
+        flex-basis: auto;
+      }
+      
+      /* Modern core */
+
+      @media (min-width: 992px) {
+          [data-bs-core=modern] {
+              background-color: var(--bs-body-bg);
+              background-image:
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-indigo-hsl), 0.01),
+                      transparent 50%),
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-primary-hsl), 0.01),
+                      transparent 50%),
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-info-hsl), 0.008),
+                      transparent 50%);
+              background-size: 100% 37.5rem;
+              background-repeat: no-repeat;
+          }
+
+          [data-bs-core=modern][data-bs-theme=dark] {
+              background-image:
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-indigo-hsl), 0.05),
+                      transparent 50%),
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-primary-hsl), 0.05),
+                      transparent 50%),
+                  radial-gradient(ellipse at top right,
+                      hsla(var(--bs-info-hsl), 0.04),
+                      transparent 50%);
+          }
+
+          [data-bs-core=modern] body {
+              background-color: transparent;
+              background-image:
+                  linear-gradient(to bottom right,
+                      transparent, 80%,
+                      hsla(var(--bs-primary-hsl), 0.025),
+                      hsla(var(--bs-primary-hsl), 0.075),
+                      hsla(var(--bs-info-hsl), 0.075),
+                      hsla(var(--bs-info-hsl), 0.025));
+              background-position: center;
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+          }
+      }
+      
+      [data-bs-core=modern] .docs-navbar {
+        background-color: hsla(var(--bs-body-bg-hsl), 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
+  <body class="position-relative h-100">
+    
+    <!-- Sidebar -->
+    <nav class="sidebar offcanvas-start offcanvas-lg" tabindex="-1" id="sidebar">
+      <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+        <a class="sidebar-brand" href="#">
+          <picture><source type="image/webp" srcset="assets/img/warzone2100.webp"><img src="assets/img/warzone2100.png" alt="Warzone 2100 Logo" width="24" height="24" class="me-2"></picture>
+          Developer Resources
+        </a>
+        <button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="sidebar-nav">
+          <li>
+            <h6 class="sidebar-header">Getting Started</h6>
+          </li>
+          <li><hr class="sidebar-divider"></li>
+          <li class="nav-item">
+            <strong><a class="nav-link" href="https://github.com/Warzone2100/warzone2100/blob/master/README.md#how-to-build">Building the Game</a></strong>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Warzone2100/warzone2100/tree/master/doc">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Warzone2100/warzone2100/issues">Issue Tracker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Warzone2100/warzone2100/blob/master/ChangeLog">Changelog</a>
+          </li>
+          <li class="mt-3">
+            <h6 class="sidebar-header">WZ Dev Discussions</h6>
+          </li>
+          <li><hr class="sidebar-divider"></li>
+          <li class="nav-item">
+            <strong><a class="nav-link" href="https://wz2100.net/webchat/">Webchat / Discord</a></strong>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Warzone2100/warzone2100/discussions">GitHub Discussions</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="h-100 min-vh-100">
+      <!-- Navbar start -->
+      <nav class="navbar navbar-expand-md docs-navbar sticky-top">
+        <div class="container-md px-3 px-sm-4 px-xl-5 py-1 justify-content-start">
+          <div class="btn-group me-3 d-lg-none">
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" class="btn btn-secondary btn-square" aria-label="Toggle sidebar">
+              <i class="fa-solid fa-bars me-1" aria-hidden="true"></i>Sidebar
+            </button>
+          </div>
+          <div class="navbar-side" id="docs-navbar-right-buttons">
+            <div class="ms-auto d-flex align-items-center justify-content-center">
+              <div class="btn-group me-1">
+                <a href="https://github.com/Warzone2100/warzone2100" class="btn btn-secondary flex-grow-1 d-flex align-items-center flex-nowrap text-start" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github flex-shrink-0" style="width: 20px;"></i>
+                  Star
+                </a>
+                <a href="https://github.com/Warzone2100/warzone2100/stargazers" class="btn btn-secondary flex-grow-1 text-nowrap" id="github-stars-count" target="_blank" rel="noreferrer">...</a>
+              </div>
+              <a href="https://wz2100.net" class="btn btn-primary text-nowrap ms-1"><i class="fa-solid fa-download me-1"></i>Download The Game</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar end -->
+      <div class="px-4 py-4 my-2 text-center mx-auto" style="max-width: 900px">
+        <picture><source type="image/webp" srcset="assets/img/warzone2100.webp"><img src="assets/img/warzone2100.png" alt="Warzone 2100 Logo" width="72px" height="72px"></picture>
+        <h1 class="fw-bold text-body-emphasis mb-0">Warzone 2100</h1>
+        <h2 class="fw-bold text-body-emphasis">Developer Resources</h2>
+        <div class="col-9 mx-auto">
+          <p class="lead mt-5 mb-4">Want to report an issue, contribute improvements, build a new AI bot, create new maps, create brand-new campaigns, or just learn more? All development and documentation happens on GitHub.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="https://github.com/Warzone2100/warzone2100" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-brands fa-github me-1"></i> Warzone 2100 on GitHub</a>
+            <a href="https://github.com/Warzone2100/warzone2100/tree/master/doc" class="btn btn-outline-secondary btn-lg px-4"><i class="fa-brands fa-readme me-1"></i> View Documentation</a>
+          </div>
+        </div>
+        <div class="col-9 mx-auto" style="opacity: .75;">
+          <p class="lead mb-2 text-muted">Older documentation has been archived, and is still available:</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-2">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#old-docs-modal">
+              Old Archived Docs
+            </button>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    <div class="modal fade" id="old-docs-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modal-title-6">Old Archived Docs</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><a href="https://github.com/Warzone2100/warzone2100/tree/master/doc" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center rounded mb-3 p-3 text-reset text-decoration-none position-relative" style="background-color: var(--bs-action-hover-bg);">
+              <i class="fa-brands fa-github flex-shrink-0 specific-w-50 me-2" style="font-size: calc(var(--bs-font-size-base) + 1.25rem);" aria-hidden="true"></i>
+              <span class="antialiased">
+                <strong>View the Latest Docs</strong>
+                <br>
+                <span class="text-body-secondary">Updated Warzone 2100 documentation has been moved to GitHub.</span>
+              </span>
+              <i class="fa-solid fa-arrow-up-right-from-square m-1 m-sm-2 text-body-secondary position-absolute top-0 end-0 z-1" aria-hidden="true"></i>
+            </a></p>
+            <h5>Archived Old Developer Wiki:</h5>
+            <p class="mb-2">
+              Much of this content is outdated, but may be applicable to older versions or interesting from a historical perspective.
+            </p>
+            <p>
+              <ul>
+                <li><a href="https://web.archive.org/web/20230929032512/https://developer.wz2100.net/wiki/" target="_blank" rel="noopener noreferrer">View on Internet Archive</li>
+                <li><a href="https://web.archive.org/web/20230929005719/https://developer.wz2100.net/wiki/TitleIndex" target="_blank" rel="noopener noreferrer">View Index on Internet Archive</li>
+                <li><a href="https://github.com/Warzone2100/old-trac-import/wiki" target="_blank" rel="noopener noreferrer">Backup on GitHub</a> (sub-par formatting)</li>
+              </ul>
+            </p>
+            <h5>Archived Old Issue Tracker:</h5>
+            <p class="mb-2">
+              <ul>
+                <li><a href="https://github.com/Warzone2100/old-trac-import/issues?q=is%3Aissue" target="_blank" rel="noopener nofollow">View on GitHub</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
